@@ -11,11 +11,13 @@ function Login() {
     
     <>
     {/*
+    <div className="text-blue-500">HI</div>
     <input type="email" required placeholder="Enter email address" value={email} onChange ={(e)=>setEmail(e.target.value)} />  
     <input type="password" required placeholder="Enter password" value={pass} onChange ={(e)=>setPassword(e.target.value)} />
     <button type="submit" onClick={console.log(email,pass)}>Submit</button>
     <button type="submit" onClick={()=>console.log(email,pass)}>Submit</button>
     */}
+  
     <form onSubmit={handleSubmit}>
     <input type="email" required placeholder="Enter email address" value={email} onChange ={(e)=>setEmail(e.target.value)} />  
     <input type="password" required placeholder="Enter password" value={pass} onChange ={(e)=>setPassword(e.target.value)} />
