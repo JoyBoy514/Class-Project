@@ -6,11 +6,11 @@ function Dashboard(){
     const [userdata,setUserdata]=useState("");
     function displaydata(){
         setUserdata(location.state);
-        console.log(Userdata)
+        console.log(userdata)
     }
     return(
         <>
-            <button onclick={displaydata}>BUTTON</button>
+            <button onClick={displaydata}>BUTTON</button>
         </>
     )
 }
