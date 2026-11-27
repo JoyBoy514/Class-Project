@@ -1,28 +1,37 @@
 import { useState } from "react"
-import { Navigate,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function Login() {
+  const location=useLocation();
   const navigate=useNavigate();
-  const[formdata , setformdata]=useState({
+  const[logindata , setLogindata]=useState({
     username:" ",
     password:" "
   })
-  //const[email,setEmail]=useState("");
-  //const[pass,setPassword]=useState("");
+  
   function handlechange(e){
     e.preventDefault();
-    setformdata({
-      ...formdata,
+    setLogindata({
+      ...logindata,
       [e.target.name] : e.target.value
     })
   }
   const handleSubmit=(event)=>{
     event.preventDefault();
     
-    console.log("login page",formdata)
+    console.log("login page",logindata)
     alert("Login Successfully")
-    navigate("/dashboard",{state:formdata})
+    navigate("/dashboard",{state:logindata})
 
+  
+  const registerdata=location.state
+  if(logindata.username==registerdata.name && logindata.password==registerdata.password){
+    console.log("if sucess")
+    navigate("/dashboard",{state:logindata})
   }
+  else
+    console.log("Error")
+}
   return (
     
     <>

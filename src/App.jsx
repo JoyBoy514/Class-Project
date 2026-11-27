@@ -8,7 +8,10 @@ import Settings from './pages/settings'
 import Dashboard from './pages/dashboard'
 import Team from './pages/team'
 import Register from './pages/register'
-
+import Admin from './pages/Admin/adminlayout'
+import AdminDashboard from "./pages/Admin/dashboard"
+import AdminSettings from "./pages/Admin/settings"
+import AdminDetails from "./pages/Admin/userdetails"
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +25,11 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/settings" element={<Settings/>}/>
         <Route path="/register" element={<Register/>}/>
+        <Route path="/adminlayout" element={<Admin/>}>
+          <Route path ="dashboard" element={<AdminDashboard/>}/>
+          <Route path ="settings" element={<AdminSettings/>}/>
+          <Route path ="userdetails" element={<AdminDetails/>}/>
+        </Route>
 
 
       </Routes>
