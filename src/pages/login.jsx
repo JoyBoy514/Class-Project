@@ -43,10 +43,21 @@ function Login() {
     <button type="submit" onClick={()=>console.log(email,pass)}>Submit</button>
     */}
   
-    <form onSubmit={handleSubmit}>
-    <input type="text" required placeholder="Enter Your userame" name="username" onChange ={handlechange} />  
-    <input type="password" required placeholder="Enter password" name="password" onChange ={handlechange} />
-    <button type="submit" >Submit</button>
+    <form onSubmit={handleSubmit}
+      className="min-h-screen flex flex-col items-center justify-center gap-5 bg-cyan-100 p-6">
+      
+        <label>Email</label>
+    <input type="email" required placeholder="Enter email address" name="email" onChange ={handlechange}
+    className="h-14 w-full max-w-md rounded-xl border-2 border-blue-200 bg-white px-5 text-lg text-slate-700 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-200" />  
+    
+        <label>Password</label>
+    <input type="password" required placeholder="Enter password" name="password" onChange ={handlechange}
+    className="h-14 w-full max-w-md rounded-xl border-2 border-blue-200 bg-white px-5 text-lg text-slate-700 outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-200" />
+    
+    <button type="submit" 
+    className="h-14 w-full max-w-md rounded-xl bg-blue-600 text-lg font-bold text-white shadow-lg shadow-blue-300 hover:bg-blue-700"
+    >Submit</button>
+
     </form> 
     </>
   )
